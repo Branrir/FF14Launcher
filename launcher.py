@@ -59,7 +59,8 @@ def run_cli(settings):
     if (settings['password'] == ''):
         settings['password'] = getpass()
     try:
-        settings['one_time_password'] = input("OTP: ")
+        if settings['one_time_password'] == "":
+            settings['one_time_password'] = input("OTP: ")
         run(settings)
     except Exception as err:
         print("Error:  " + str(err))
