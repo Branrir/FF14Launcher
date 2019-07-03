@@ -55,7 +55,7 @@ def run(settings):
 
 def run_cli(settings):
     if (settings['user'] == ''):
-        settings['user'] = input("User Name:  ")
+        settings['user'] = input("User Name: ")
     if (settings['password'] == ''):
         settings['password'] = getpass()
     try:
