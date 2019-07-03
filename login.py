@@ -13,11 +13,11 @@ import ssl
 import datetime
 if (sys.version_info >= (3, 0)):
     from urllib.error import URLError
-    from urllib.request import Request,urlopen
+    from urllib.request import Request, urlopen
     from urllib.parse import urlencode
 else:
-    from urllib2 import  Request,urlopen,URLError
-    from urllib  import urlencode
+    from urllib2 import Request, urlopen, URLError
+    from urllib import urlencode
 
 # Constants and magic values used throughout
 login_headers = {"User-Agent": "SQEXAuthor/2.0.0(Windows XP; ja-jp; 3aed65f87c)"}
@@ -51,7 +51,7 @@ def open_url(url, data, headers, context=None):
     req = Request(url, data, headers)
     try:
         return urlopen(req, context=context)
-    except:
+    except URLError:
         print("Error accessing", url)
         raise
 
