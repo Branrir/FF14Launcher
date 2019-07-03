@@ -59,6 +59,7 @@ def run_cli(settings):
     if (settings['password'] == ''):
         settings['password'] = getpass()
     try:
+        settings['one_time_password'] = input("OTP: ")
         run(settings)
     except Exception as err:
         print("Error:  " + str(err))
@@ -107,7 +108,7 @@ class gui_prompt:
         self.E3 = tkinter.Entry(self.top, textvariable=tkinter.StringVar(value=settings['one_time_password']))
         self.E3.grid(row=2, column=1)
 
-        self.OK = tkinter.Button(self.top, text ="Connect", command = self.run_gui)
+        self.OK = tkinter.Button(self.top, text="Connect", command=self.run_gui)
         self.OK.grid(row=3, column=1)
         self.top.bind('<Return>', lambda _: self.OK.invoke())
         self.top.bind('<KP_Enter>', lambda _: self.OK.invoke())
