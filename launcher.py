@@ -26,7 +26,7 @@ def gen_launcher_command(settings):
     else:
         exe_path = join_path(exe_path, 'game/ffxiv.exe')
 
-        launcher_dict = [
+    launcher_dict = [
                          exe_path,
                          'language=1',
                          'DEV.UseSqPack=1', 'DEV.DataPathType=1',
