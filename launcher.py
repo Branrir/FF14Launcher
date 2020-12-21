@@ -131,7 +131,7 @@ settings = config._sections['FFXIV']
 if len(sys.argv) > 1:
     settings['one_time_password'] = sys.argv[1]
 
-if (config['FFXIV'].getboolean('USEGUI')):
+if (config['FFXIV'].getboolean('USEGUI')) and len(sys.argv) != 2:
     gui_prompt(settings)
 else:
     run_cli(settings)
